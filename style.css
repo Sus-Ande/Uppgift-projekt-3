@@ -232,6 +232,58 @@ li {
   right: 0;
 }
 
+.cards {
+  background-color: var(--color-light);
+  height: 100vh;
+  color: var(--color-light);
+}
+.cards__header {
+  background-color: #32302D;
+  margin: 0 32px 0 32px;
+}
+.cards__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gap-l);
+}
+.cards__inner {
+  background-color: #32302D;
+  padding: var(--gap-xl);
+  margin: 0 32px 0 32px;
+}
+.cards__button {
+  background-color: transparent;
+  color: #fff;
+  border: 0;
+  padding: 0;
+  font-size: var(--font-size-2);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-s);
+}
+.cards__button svg {
+  opacity: 0.34;
+}
+.cards__button:hover {
+  background-color: transparent;
+  color: var(--color-light);
+}
+
+.card__image {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+}
+.card__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.card__overlay {
+  position: absolute;
+  top: 0;
+}
 .hero {
   background-color: var(--color-light);
   height: 100vh;
