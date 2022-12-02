@@ -44,6 +44,7 @@
   --font-size-4: calc( var(--font-size-3) * var(--font-scale) );
   --font-size-5: calc( var(--font-size-4) * var(--font-scale) );
   --font-size-6: calc( var(--font-size-5) * var(--font-scale) );
+  --font-size-7: calc( var(--font-size-6) * var(--font-scale) );
   --grid-container:[full-start] minmax(32px, 1fr) [inner-start] minmax(0, 75rem) [inner-end] minmax(32px, 1fr) [full-end];
 }
 
@@ -238,16 +239,20 @@ li {
   color: var(--color-light);
 }
 .cards__header {
-  background-color: #32302D;
-  margin: 0 32px 0 32px;
+  background-color: #878684;
+}
+.cards__title {
+  font-size: clamp(var(--font-size-2), 5vw, var(--font-size-4));
+  margin: 0;
 }
 .cards__content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gap-l);
+  margin-top: 80px;
 }
 .cards__inner {
-  background-color: #32302D;
+  background-color: #878684;
   padding: var(--gap-xl);
   margin: 0 32px 0 32px;
 }
@@ -283,7 +288,56 @@ li {
 .card__overlay {
   position: absolute;
   top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+.card__title {
+  position: absolute;
+  color: var(--color-light);
+  font-size: var(--font-size-7);
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+.card__content {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-2);
+  margin-top: var(--gap-m);
+  margin-left: var(--gap-s);
+}
+.card__button {
+  background-color: transparent;
+  color: #fff;
+  border: 0;
+  padding: 0;
+  font-size: var(--font-size-2);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-s);
+  margin-top: var(--gap-m);
+  margin-left: var(--gap-s);
+}
+.card__button svg {
+  opacity: 0.34;
+}
+.card__button:hover {
+  background-color: transparent;
+  color: var(--color-light);
+}
+.card__button svg {
+  height: var(--gap-m);
+  width: var(--gap-m);
+  transition: all 0.2s;
+}
+.card__button:hover svg {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
 .hero {
   background-color: var(--color-light);
   height: 100vh;
@@ -445,12 +499,12 @@ li {
   }
 }
 .destination__title {
-  font-size: clamp 3rem, 8vw, 5.25rem;
+  font-size: clamp(3rem, 8vw, 5.25rem);
   margin: 0;
 }
 .destination__subtitle {
   font-size: var(--font-size-4);
-  font-size: clamp var(--font-size-2), 5vw, var(--font-size-4);
+  font-size: clamp(var(--font-size-2), 5vw, var(--font-size-4));
   font-style: italic;
   font-weight: 300;
   margin: 0.5rem 0 0 0;

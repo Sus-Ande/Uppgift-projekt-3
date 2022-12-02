@@ -8,24 +8,26 @@
     color: var(--color-light);
 
     &__header {
-        background-color: #32302D;
-        margin: 0 32px 0 32px;
+        background-color: #878684;
 
     }
 
+    &__title {
+        font-size:clamp( var(--font-size-2), 5vw,  var(--font-size-4));
+        margin: 0;
+    }
+    
     &__content {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: var(--gap-l);
+        margin-top: 80px;
     }
 
     &__inner {
-        background-color: #32302D;
+        background-color: #878684;
         padding: var(--gap-xl);
         margin: 0 32px 0 32px;
-        // display: flex;
-        // gap: 50px;
-        // flex-wrap: wrap;
     }
 
 
@@ -52,12 +54,50 @@
     &__overlay {
         position: absolute;
         top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(0,0,0,0.5);
 
     }
 
     &__title {
-        // font-size: clamp (3rem, 8vw, 5.25rem);
-        // margin: 0;
+        position: absolute;
+        color: var(--color-light);
+        font-size: var(--font-size-7);
+        left: 50%;
+        top: 50%;
+        margin: 0;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    &__content {
+        font-family: var(--font-sans);
+        font-size: var(--font-size-2);
+        margin-top: var(--gap-m);
+        margin-left: var(--gap-s);
+
+    }
+
+    &__button {
+        @include button.default($icon-opacity: 0.34);
+        margin-top: var(--gap-m);
+        margin-left: var(--gap-s);
+
+        svg {
+            height: var(--gap-m);
+            width: var(--gap-m);
+            transition: all 0.2s;
+        }
+
+        &:hover {
+            svg {
+                opacity: 1;
+                transform: rotate(90deg);
+
+            }
+        }
     }
 }
 
