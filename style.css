@@ -249,12 +249,22 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gap-l);
-  margin-top: 80px;
+  margin-top: 40px;
+}
+@media screen and (max-width: 1100px) {
+  .cards__content {
+    grid-template-columns: 1fr;
+  }
 }
 .cards__inner {
   background-color: #878684;
   padding: var(--gap-xl);
-  margin: 0 32px 0 32px;
+  margin: 0 32px;
+}
+@media screen and (max-width: 62.5rem) {
+  .cards__inner {
+    margin: 0 16px;
+  }
 }
 .cards__button {
   background-color: transparent;
@@ -279,11 +289,17 @@ li {
   aspect-ratio: 1/1;
   overflow: hidden;
   position: relative;
+  display: flex;
+  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.5);
 }
 .card__image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  display: block;
+}
+.card__image:hover .card__title {
+  color: var(--color-accent);
 }
 .card__overlay {
   position: absolute;
@@ -296,11 +312,17 @@ li {
 .card__title {
   position: absolute;
   color: var(--color-light);
-  font-size: var(--font-size-7);
+  font-size: clamp(2rem, 4vw, 4rem);
   left: 50%;
   top: 50%;
   margin: 0;
   transform: translate(-50%, -50%);
+  transition: fill 0.5s;
+}
+@media screen and (max-width: 1100px) {
+  .card__title {
+    font-size: 9vw;
+  }
 }
 .card__content {
   font-family: var(--font-sans);
@@ -318,7 +340,7 @@ li {
   display: inline-flex;
   align-items: center;
   gap: var(--gap-s);
-  margin-top: var(--gap-m);
+  margin-top: var(--gap-s);
   margin-left: var(--gap-s);
 }
 .card__button svg {
@@ -333,9 +355,17 @@ li {
   width: var(--gap-m);
   transition: all 0.2s;
 }
+.card__button:hover {
+  color: var(--color-accent);
+}
 .card__button:hover svg {
   opacity: 1;
   transform: rotate(90deg);
+}
+@media screen and (max-width: 1100px) {
+  .card__button:hover {
+    margin-bottom: 40px;
+  }
 }
 
 .hero {
